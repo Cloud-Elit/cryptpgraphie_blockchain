@@ -112,7 +112,22 @@ Pour la gestion des transactions, les blockchains peuvent être globalement clas
 - **les blockchains basées sur la sortie de transaction non dépensée** - **UTXO** (Unspent Transaction Output) : dans ce type de blockchains, chaque transaction correspond à un transfert de pièces entre plusieurs nœuds (relations plusieurs-à-plusieurs). Un transfert consomme (i.e. dépense des pièces à partir de) certaines entrées et crée (i.e. dirige les pièces vers) de nouvelles sorties. Il s’agit donc d’un graphe dirigé dans le temps reliant les opérations de transferts entre les différents nœuds représentés par leurs adresses publiques dans le réseau de la blockchain. 
 - **les blockchains basées sur le compte** : dans ce type de blockchains, un nœud, représenté par son adresse publique, peut dépenser une fraction de ses pièces et conserver le solde restant. Dans ces blockchains, une transaction a exactement une entrée et une adresse de sortie (relations un-à-un contrairement à UTXO). Bien que la création d’adresse soit gratuite, une seule adresse est généralement utilisée pour recevoir et envoyer des pièces plusieurs fois.
 ## Bibliographie
-- [Alladi, 18] Alladi, Bhima Sankaram & Prasad, Srinivas. (2017). Big data life cycle: security issues, challenges, threat and security model. International Journal of Engineering & Technology. Volume 7. DOI: 10.14419/ijet.v7i1.3.9666. 
+- [Azaria, 16] Azaria, Asaph & Ekblaw, Ariel & Vieira, Thiago & Lippman, Andrew. (2016). MedRec: Using Blockchain for Medical Data Access and Permission Management. 25-30. DOI: 10.1109/OBD.2016.11. 
+- [Back, 02] Back, Adam. (2002). Hashcash - A Denial of Service Counter-Measure. 
+- [Back, 97] Back, Adam. (1997). Hashcash. Available online: http://www.hashcash.org/ (last accessed December 25, 2021)
+- [Bertoni, 08] Bertoni, Guido & Daemen, Joan & Peeters, Michaël & Van Assche, Gilles. (2008). Keccak speciecations. Available online: https://keccak.team/index.html (last accessed December 25, 2021)
+- [CNIL, 16] Commission Nationale de l'Informatique et des Libertés (CNIL). (2016). Comprendre les grands principes de la cryptologie et du chiffrement. Available online: https://www.cnil.fr/fr/comprendre-les-grands-principes-de-la-cryptologie-et-du-chiffrement (last accessed December 25, 2021)
+- [Dwork, 93] Dwork, Cynthia & Naor, Moni. (1993). Pricing via Processing or Combatting Junk Mail. Advances in Cryptology - CRYPT0 '92, LNCS 740, pp. 139-14, 1993. DOI: 10.1007/3-540-48071-4_10. 
+- [FIPS PUBS, 01] Federal Information Processing Standards Publications 197. (2001). ADVANCED ENCRYPTION STANDARD (AES). 
+- [FIPS PUBS, 99] Federal Information Processing Standards Publications 46-3. (1999). DATA ENCRYPTION STANDARD (DES).
+- [Jakobsson, 99] Jakobsson, Markus & Juels, Ari. (1999). Proofs of Work and Bread Pudding Protocols.. Communications and Multimedia Security. 258-272. DOI: 10.1007/978-0-387-35568-9_18. 
+- [Nakamoto, 08] Nakamoto, Satoshi. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. Available online: https://bitcoin.org/bitcoin.pdf (last accessed December 25, 2021)
+- [Ouaddah, 17] Ouaddah, Aafaf & Elkalam, Anas & Ouahman, Abdellah. (2017). Towards a Novel Privacy-Preserving Access Control Model Based on Blockchain Technology in IoT. DOI: 10.1007/978-3-319-46568-5_53. 
+- [Pinno, 17] Pinno, Otto Julio & Grégio, André & Bona, Luis Carlos. (2017). ControlChain: Blockchain as a Central Enabler for Access Control Authorizations in the IoT. University of Paris 2 Panth´eon-Assas, CRED Paris Center for Law and Economics, Chaire Finance Digitale.. DOI: 10.1109/GLOCOM.2017.8254521. 
+- [Rivest, 92] Rivest, R.. (1992). The MD5 Message-digest Algorithm. Network Working Group. MIT Laboratory for Computer Science and RSA Data Security. 
+- [RSA, 78] Rivest, Ron & Shamir, Adi & Adleman, Len. (1978). A Method for Obtaining Digital Signatures and PublicKey Cryptosystems. Communications of the ACM. Volume 21. Issue 2. pp 120–126. DOI: 10.1145/359340.359342.
+- [Schneier, 05] Schneier. (2005). Schneier on Security. Cryptanalysis of SHA-1. Available online: https://www.schneier.com/blog/archives/2005/02/cryptanalysis_o.html (last accessed December 25, 2021)
+- [Wang, 04] Wang, Xiaoyun & Feng, Dengguo & Lai, Xuejia & Yu, Hongbo. (2004). Collisions for Hash Functions MD4, MD5, HAVAL-128 and RIPEMD.. IACR Cryptology ePrint Archive. 2004. 199. 
 
 [^1]: https://www.itu.int/rec/T-REC-X.509/fr
 [^2]: Un actif numérique est un bien immatériel, constitué de données numériques, qui possède une valeur financière déterminée par l’offre et la demande, comme tout autre actif financier.
