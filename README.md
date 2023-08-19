@@ -35,11 +35,9 @@ Le chiffrement symétrique est particulièrement rapide, puisqu’on utilise la 
 
 Le chiffrement asymétrique, quant à lui, est basé sur deux clés : une pour le chiffrement et une autre pour le déchiffrement. Si la clé de chiffrement est publique, celle de déchiffrement doit être secrète et vice versa. Comme le chiffrement symétrique utilise la même clé, il est plus rapide que le chiffrement asymétrique qui nécessite des calculs plus complexes pour chiffrer et déchiffrer des données. Dans le cas général, comme le montre la Figure 3, le chiffrement asymétrique consiste à ce que l’émetteur utilise la clé publique du destinataire pour chiffrer le message et que le destinataire utilise sa clé privée pour le déchiffrer. 
 <p align="center">
-  <img src="" /><br/>
+  <img src="https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/f188882f-0b80-4fb7-9937-c0c25213ce3a" /><br/>
   <i>Figure 3. Chiffrement asymétrique (chiffrement par clé publique et déchiffrement par clé privée)</i>
 </p>
-![003](https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/f188882f-0b80-4fb7-9937-c0c25213ce3a)
-
 
 Dans certaines situations, comme le montre la Figure 4, il est possible que l’émetteur chiffre un message avec sa clé privée et que le destinataire utilise la clé publique de l’émetteur pour déchiffrer le message. Ce processus est utilisé par exemple pour prouver l’authenticité de l’émetteur d’une signature électronique. 
 <p align="center">
