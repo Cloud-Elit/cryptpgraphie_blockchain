@@ -10,8 +10,10 @@ Dans cette section nous allons présenter brièvement ces trois fonctions ainsi 
 Le hachage permet de garantir qu’un message est intègre et de détecter s’il a été involontairement modifié. Comme le montre la Figure 1, une "fonction de hachage" permet d’associer à un message M (un simple texte, un fichier texte ou multimédia, un répertoire, etc.), quelle que soit sa taille, une empreinte unique H(M), qui est une suite de caractères hexadécimaux de taille fixe. La taille de l’empreinte dépend de la fonction de hachage utilisée. Connaissant l’algorithme de hachage :
 - toute personne peut calculer l’empreinte H(M) d’un message M. Cette valeur ne change pas tant que la fonction de hachage n’a pas changé.
 - personne ne peut retrouver le message M à partir de son empreinte H(M) ; il s’agit d’une fonction à sens unique (irréversible).
-
-*Figure 1. Mécanisme de hachage*
+<p align="center">
+  <img src="https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/5a5cd215-94a6-42ad-bbe0-cf0ad996c20d" /><br/>
+  <i>Figure 1. Mécanisme de hachage</i>
+</p>
 
 L’empreinte H(M) doit être une caractéristique du message M et il doit y avoir une très faible probabilité de collision, c’est-à-dire que deux messages différents aient la même empreinte. Différents algorithmes existent pour calculer l’empreinte d’un message :
 - **MD5** (Message Digest 5) : inventée par Ronald Rivest [Rivest, 92], cette fonction de hachage produit une empreinte de 128 bits (16 octets ou 32 caractères en notation hexadécimale). Wang et al. ont démontré qu’il était possible d’obtenir la même empreinte (des collisions) sur des fichiers différents [Wang, 04], ce qui fait donc de MD5 un algorithme faillible et obsolète (même s’il est encore un standard très utilisé dans les entreprises pour le stockage des mots de passe).
@@ -24,18 +26,26 @@ Outre l’intégrité numérique, le hachage a de nombreuses applications telle
 Le chiffrement et le déchiffrement (ou, cryptage et décryptage) sont un procédé de cryptographie qui permet de rendre la compréhension d’un message impossible à toute personne qui n’a pas la clé de déchiffrement. Le chiffrement consiste, grâce à une clé et un algorithme de chiffrement, à transformer un texte en clair en un texte chiffré, appelé cryptogramme, qui n’est pas compréhensible. Le déchiffrement est l’opération inverse ; grâce à une clé et un algorithme de déchiffrement, il permet de transformer un texte chiffré en texte en clair. Trois types de chiffrement existent : le chiffrement symétrique, le chiffrement asymétrique et le chiffrement hybride.
 
 Le chiffrement symétrique, comme illustré dans la Figure 2, permet de chiffrer et de déchiffrer un message moyennant une clé secrète dite "clé privée". C’est la même clé qui est utilisée pour chiffrer et déchiffrer le message. 
-
-*Figure 2. Mécanisme du chiffrement symétrique*
+<p align="center">
+  <img src="https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/17d4f1b7-de2c-456c-b140-9ca112053009" /><br/>
+  <i>Figure 2. Mécanisme du chiffrement symétrique</i>
+</p>
 
 Le chiffrement symétrique est particulièrement rapide, puisqu’on utilise la même clé, mais nécessite que l’émetteur et le destinataire se mettent d’accord sur une clé secrète commune ou se la transmettent par un autre canal [CNIL, 16]. Celui-ci doit être choisi avec précaution pour éviter que la clé soit récupérée par des pirates.
 
 Le chiffrement asymétrique, quant à lui, est basé sur deux clés : une pour le chiffrement et une autre pour le déchiffrement. Si la clé de chiffrement est publique, celle de déchiffrement doit être secrète et vice versa. Comme le chiffrement symétrique utilise la même clé, il est plus rapide que le chiffrement asymétrique qui nécessite des calculs plus complexes pour chiffrer et déchiffrer des données. Dans le cas général, comme le montre la Figure 3, le chiffrement asymétrique consiste à ce que l’émetteur utilise la clé publique du destinataire pour chiffrer le message et que le destinataire utilise sa clé privée pour le déchiffrer. 
+<p align="center">
+  <img src="" /><br/>
+  <i>Figure 3. Chiffrement asymétrique (chiffrement par clé publique et déchiffrement par clé privée)</i>
+</p>
+![003](https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/f188882f-0b80-4fb7-9937-c0c25213ce3a)
 
-*Figure 3. Chiffrement asymétrique (chiffrement par clé publique et déchiffrement par clé privée)*
 
 Dans certaines situations, comme le montre la Figure 4, il est possible que l’émetteur chiffre un message avec sa clé privée et que le destinataire utilise la clé publique de l’émetteur pour déchiffrer le message. Ce processus est utilisé par exemple pour prouver l’authenticité de l’émetteur d’une signature électronique. 
-
-*Figure 4. Chiffrement asymétrique (chiffrement par clé privée et déchiffrement par clé publique)*
+<p align="center">
+  <img src="https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/c42d82e2-46d0-4741-ac88-18273525bcf2" /><br/>
+  <i>Figure 4. Chiffrement asymétrique (chiffrement par clé privée et déchiffrement par clé publique)</i>
+</p>
 
 L’avantage du chiffrement asymétrique c’est qu’il n’y a pas de clé secrète à se partager entre l’émetteur et le destinataire : connaissant la clé publique du destinataire, l’émetteur chiffre le message, et ensuite, le destinataire, étant le seul à connaitre sa clé privée, l’utilise pour déchiffrer les messages qu’il reçoit. Le risque dans ce mode de fonctionnement c’est que l’émetteur doit s’assurer que la clé publique est bien celle du destinataire et qu’elle n’a pas été remplacée par celle d’un pirate. Grâce au certificat électronique, présenté un peu plus loin, ce problème d’authenticité de la clé publique est résolu.
 
@@ -44,13 +54,15 @@ Le chiffrement hybride est une technique qui combine le chiffrement symétrique 
 Concernant les algorithmes de chiffrement, l’AES (Advanced Encryption Standard) [FIPS PUBS, 01], aussi connu par l’algorithme Rijndael, est aujourd’hui le standard le plus utilisé dans le chiffrement symétrique. L’AES est destiné à remplacer le DES (Data Encryption Standard) [FIPS PUBS, 99] qui est devenu trop faible au regard des attaques d’aujourd’hui. Pour le chiffrement asymétrique, RSA [RSA, 78], nommé par les initiales de ses trois inventeurs Rivest, Shamir et Adleman, est l’algorithme le plus utilisé aujourd’hui pour échanger des données confidentielles sur Internet.
 ### Signature Numérique
 Par analogie avec la signature manuscrite d’un document papier, la signature numérique permet d’authentifier l’auteur d’un message (ou de tout document électronique) et de garantir son intégrité (en s’assurant qu’il n’a pas été modifié). Une signature numérique doit répondre à trois caractéristiques : l’authenticité (elle ne doit pas pouvoir être imitée), la non-répudiation (le signataire ne doit pas pouvoir se rétracter ou prétendre qu’il ne l’a pas signée) et l’intégrité (en comparant la signature et le message, on doit pouvoir être sûr que le message n’a pas été modifié lors de l’envoi). La signature numérique est basée sur le chiffrement asymétrique et les fonctions de hachage selon le protocole illustré dans la Figure 5.
-
-*Figure 5. Mécanisme de la signature numérique*
+<p align="center">
+  <img src="https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/eca69781-e4f8-4658-82dd-9c01168ba7bd" /><br/>
+  <i>Figure 5. Mécanisme de la signature numérique</i>
+</p>
 
 Le protocole de la signature numérique consiste à :
 - Pour signer un message, le signataire doit, tout d’abord, générer l’empreinte du message au moyen d’une fonction de hachage et, ensuite, chiffrer cette empreinte avec sa clé privée. La signature ainsi obtenue, est transmise avec le message au destinataire. 
 - Pour vérifier la validité du message, le vérificateur doit tout d’abord générer l’empreinte du message en utilisant la même fonction de hachage appliquée par le signataire et, ensuite, déchiffrer la signature en utilisant la clé publique du signataire. Il suffit enfin de comparer les deux empreintes pour juger de la validité de la signature numérique.
-  ### Certificat Electronique
+### Certificat Electronique
 Le chiffrement asymétrique est basé sur le partage d’une clé publique entre différents utilisateurs. Le partage de cette clé publique se fait souvent au travers d’un annuaire ou d’un serveur web. Le problème c’est que dans ce mode de partage, rien ne garantit que la clé publique est bien celle de l’utilisateur qui l’a partagée. Un pirate qui réussit à remplacer une clé publique par la sienne pourra déchiffrer tous les messages ayant été chiffrés par cette nouvelle clé corrompue. Les certificats électroniques permettent de résoudre ce problème. Un certificat électronique permet d’associer une clé publique à une entité (une personne, une organisation, une machine, ...) afin d’en assurer la validité. Ainsi, lorsqu’on récupère une clé publique, grâce au certificat électronique qui lui est associé, on saura si elle est valide ou pas. 
 
 Le certificat électronique peut être vu comme la pièce d’identité de l’entité désirant partager une clé publique. Il est généralement délivré par un organisme appelé "autorité de certification" ou CA (pour Certification Authority). Une autorité de certification est chargée de délivrer les certificats et de leur assigner une date de validité. Elle peut éventuellement révoquer à tout moment un certificat électronique. Selon la norme X509[^1], le certificat électronique doit contenir un ensemble d’informations telles que le nom de l’autorité de certification l’ayant délivré, sa date de validité, la clé publique associée, certaines informations sur l’entité ayant partagé la clé publique (nom, prénom, adresse électronique, etc.), …, et la signature de l’autorité de certification. Cette signature électronique est une empreinte générée à partir des informations contenues dans le certificat (nom, adresse, clé publique, …). La signature est chiffrée par la clé privée de l’autorité de certification ayant délivré le certificat.
@@ -72,8 +84,10 @@ Avec son émergence dans les crypto-monnaies, la blockchain a été conçue pour
 La blockchain a eu son progrès dans le Bitcoin [Nakamoto, 08] pour enregistrer de façon sécurisée les transactions financières. Aujourd’hui, elle est utilisée pour stocker tout type d’informations. A titre d’exemples, Ouaddah et al. [Ouaddah, 17] l’utilisent pour stocker des contrats intelligents appliqués pour échanger des exécutions de politiques de contrôle d’accès contre des jetons d’accès ; Pinno et al. [Pinno, 17] l’utilisent pour stocker les règles de contrôle d’accès, les relations, les contextes et les informations de responsabilité ; Azaria et al. [Azaria, 16] l’utilisent pour contrôler les autorisations d’accès aux données des dossiers médicaux des patients à travers des contrats intelligents entre les patients, les prestataires et les tiers pour accorder des autorisations d’accès, etc. Certains modèles de contrôle d’accès, que nous étudions un peu plus loin dans ce chapitre, sont basés sur la blockchain ; c’est pour cette raison que nous dédions cette section à la présentation des notions fondamentales de la blockchain.
 
 La blockchain est une technologie qui permet de stocker de façon sécurisée des données numériques dans une architecture distribuée. Elle est basée principalement sur le hachage. Comme son nom l’indique, une blockchain est une chaine de blocs ordonnés, chacun contient des données numériques en plus du hash du bloc précédent. Le tout premier bloc s’appelle le bloc de genèse (genesis block, en anglais) et sert de base sur laquelle des blocs supplémentaires sont ajoutés pour former la chaîne de blocs. Dans une blockchain, un nouveau bloc ne peut être créé que si le hash du bloc précédent ait été généré (sachant que le hash d’un bloc ne peut être calculé qu’à la fin d’écriture de toutes les données qu’il doit contenir). Comme illustré dans la Figure 6, le hash du bloc 64 n’a été calculé qu’après avoir terminé toutes les écritures de ce bloc et le bloc 65 n’a été généré qu’après avoir calculé le hash du bloc 64. C’est donc la fonction de hachage qui permet d’ordonner les blocs dans une blockchain.
-
-*Figure 6. Principe de la Blockchain*
+<p align="center">
+  <img src="https://github.com/Cloud-Elit/cryptpgraphie_blockchain/assets/142179779/ee0a6a1a-b09f-4b55-9ae5-8ca33e6c5e39" /><br/>
+  <i>Figure 6. Principe de la Blockchain</i>
+</p>
 
 Un bloc peut contenir toute sorte de données (des transactions dans le cadre de la crypto-monnaie, des données que l’on doit protéger ou archiver, des données que l’on souhaite partager dans un réseau distribué, etc.). L’écriture dans un bloc suit généralement les étapes suivantes :
 
